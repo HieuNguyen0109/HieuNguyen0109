@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>IoT-Bootstap </title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   </head>
+   
+   <body >
+      <script src=""></script>
+    <h1 style="text-align: center;">Nguyễn Quốc Hiếu - B19DCDT077 </h1>
+    <h2 class="small" style="font-size: 30px ; text-align: center; background-color:lightskyblue ; height: 100px; border-radius: 20px; padding-top: 25px;"> Bảng trạng thái</h2>
+      <div class= "container-fluid">
+         <div class= "row" style=" height: 100px;" >
+            <div class ="col-sm-4 " style="background-color: lightgreen; text-align: center; border-radius: 20px;" id="temp">
+              <p class="small" style="font-size: 30px; padding-top: 25px;" >9</p>
+            </div>
+            <div class ="col-sm-4 " style="background-color: lightcyan; text-align: center; border-radius: 20px;" id="temp1">
+               <p class="small" style="font-size: 30px; padding-top: 25px;">34</p>
+            </div>
+            <div class ="col-sm-4 " style="background-color:lightsteelblue; text-align: center; border-radius: 20px;" id="temp2">
+               <p class="small" style="font-size: 30px; padding-top: 25px; ">99</p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <img src="https://cdn.hikb.at/charts/average-monthly-rain/danang-average-monthly-rain.png" height="450px" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <p class="font-weight-bold">
+            <div class="col-sm-12" id="backgroud" style="background-color: lightblue ; height:170px; border-radius: 20px; font-size: 20px; text-align: center; padding-top: 40px;">Công tắc 1</p>
+            <button type="button" class="btn btn-outline-success" onclick="ClickOn()" id="BtnOn">On</button>
+            <button type="button" class="btn btn-outline-danger" onclick="ClickOff()" id="BtnOff">Off</button>
+            </div>
+          <p class="font-weight-bold">
+            <div class="col-sm-12" id="backgroud2" style="background-color:lightskyblue; height: 170px; border-radius: 20px; font-size: 20px; text-align: center; padding-top: 40px;">Công tắc 2</p>
+            <button type="button" class="btn btn-outline-success " onclick="ClickOn2()" id="BtnOn2">On</button>
+            <button type="button" class="btn btn-outline-danger" onclick="ClickOff2()" id="BtnOff2">Off</button>
+            </div>
+        </div>
+      </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   </body>
+<script>
+function ClickOn(){
+   document.getElementById("backgroud").style.background = "#a4f5bb"
+}
+function ClickOff(){
+   document.getElementById("backgroud").style.background = "#f5a7a4"
+}
+function ClickOn2(){
+   document.getElementById("backgroud2").style.background = "#a4f5bb"
+}
+function ClickOff2(){
+   document.getElementById("backgroud2").style.background = "#f5a7a4"
+}
+var tempBlock = document.getElementById('temp');
+var tempBlock1 = document.getElementById('temp1');
+var tempBlock2 = document.getElementById('temp2');
+var temp = tempBlock.innerText;
+var temp1 = tempBlock1.innerText;
+var temp2 = tempBlock2.innerText;
+
+if (temp > 0 && temp < 10) {
+   tempBlock.style.background = "black";
+   tempBlock.style.color = "white";
+}
+if (temp1 >= 10 && temp1 < 35) {
+   tempBlock1.style.background = "red";
+   tempBlock1.style.color = "white";
+}
+if (temp2 >= 35 && temp2 < 100) {
+   tempBlock2.style.background = "#076ae3";
+   tempBlock2.style.color = "white";
+}
+</script>
+
+</html>
